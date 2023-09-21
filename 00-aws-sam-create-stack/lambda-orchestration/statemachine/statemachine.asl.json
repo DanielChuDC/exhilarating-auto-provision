@@ -1,0 +1,37 @@
+{
+    "Comment": "A state machine that does automation provision",
+    "StartAt": "json-parsing-stage",
+    "States": {
+        "json-parsing-stage": {
+            "Type": "Task",
+            "Resource": "${JsonParsingFnArn}",
+            "Next": "approval-stage-06"
+        },
+        "approval-stage-06": {
+            "Type": "Task",
+            "Resource": "${ApprovalStageFnArn}",
+            "ResultPath": null,
+            "Next": "resource-provision-stage-07"
+        },
+        "resource-provision-stage-07": {
+            "Type": "Task",
+            "Resource": "${ResourceProvisionFnArn}",
+            "Parameters": {
+                "ApplicationName": "$.ApplicationName",
+                "TargetEnvironment": "$.TargetEnvironment",
+                "ProjectType": "$.ProjectType",
+                "TechStack": "$.TechStack",
+                "ProjectURL": "$.ProjectURL",
+                "AccessToken": "$.AccessToken",
+                "PrivateKey": "$.PrivateKey",
+                "ProjectEmail": "$.ProjectEmail"
+            },
+            "Next": "validation-and-testing-stage-08"
+        },
+        "validation-and-testing-stage-08": {
+            "Type": "Task",
+            "Resource": "${ValidationAndTestingFnArn}",
+            "End": true
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "ApplicationName": "MyApp2221",
+  "TargetEnvironment": "Production",
+  "ProjectType": "Dynamic",
+  "TechStack": "Node.js",
+  "ProjectURL": "https://my-strapi-bucket-1.s3.ap-southeast-1.amazonaws.com/full-stack-serverless.cf.yaml",
+  "AccessToken": "abc123",
+  "PrivateKey": "xyz456",
+  "ProjectEmail": "xxx@gmail.com"
+}

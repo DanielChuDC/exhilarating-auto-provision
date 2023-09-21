@@ -1,0 +1,12 @@
+{
+    "Name": "xxx",
+    "Description": "Cognito Stack",
+    "environment": "Development (dev), staging (stag), Production (prod)",
+    "Project-type": "Static, Dynamic, SPA, CMS",
+    "techstack": "PHP, Ruby on Rails, Node.js, MEAN, Wordpress, Strapi",
+    "Project-URL": "github.com/xxxx",
+    "Project-access-token": "xxxx",
+    "Project-private-key": "xxxx",
+    "Project-email": "xxx@xxx"
+}
+  

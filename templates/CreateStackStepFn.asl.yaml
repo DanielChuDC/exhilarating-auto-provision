@@ -1,0 +1,13 @@
+Comment: A description of my state machine
+StartAt: CreateStack
+States:
+  CreateStack:
+    Type: Task
+    End: true
+    Parameters:
+      StackName: MyData
+      TemplateURL: >-
+        https://my-strapi-bucket-1.s3.ap-southeast-1.amazonaws.com/test-s3-bucket.json
+      Capabilities:
+        - CAPABILITY_NAMED_IAM
+    Resource: arn:aws:states:::aws-sdk:cloudformation:createStack

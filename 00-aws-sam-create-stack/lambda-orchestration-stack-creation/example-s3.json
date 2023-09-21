@@ -1,0 +1,10 @@
+{
+  "ApplicationName": "MyApp",
+  "TargetEnvironment": "Production",
+  "ProjectType": "Dynamic",
+  "TechStack": "Node.js",
+  "ProjectURL": "https://my-strapi-bucket-1.s3.ap-southeast-1.amazonaws.com/test-s3-bucket.json",
+  "AccessToken": "abc123",
+  "PrivateKey": "xyz456",
+  "ProjectEmail": "xxx@gmail.com"
+}

@@ -1,0 +1,10 @@
+{
+  "ApplicationName": "MyApp",
+  "TargetEnvironment": "Production",
+  "ProjectType": "Dynamic",
+  "TechStack": "Node.js",
+  "ProjectURL": "github.com/myapp",
+  "AccessToken": "abc123",
+  "PrivateKey": "xyz456",
+  "ProjectEmail": "xxx@gmail.com"
+}

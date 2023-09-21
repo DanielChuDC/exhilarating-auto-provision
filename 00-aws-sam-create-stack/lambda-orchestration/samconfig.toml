@@ -1,0 +1,11 @@
+version = 0.1
+[default.deploy.parameters]
+stack_name = "lambda-orchestration"
+resolve_s3 = true
+s3_prefix = "lambda-orchestration"
+region = "ap-southeast-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+disable_rollback = true
+parameter_overrides = "ResourcePrefix=\"sample-sfn-orchestrate-lambda\""
+image_repositories = []
