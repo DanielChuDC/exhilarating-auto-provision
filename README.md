@@ -116,20 +116,20 @@ graph TD;
         E --> P[AWS Lambda Parses json];
         P --> |Parsing fail| F[Resource Provision];
         P --> |Parsing success| I2[Cancel json Parsing ];
-        I2--> N
+        I2--> N[Cancel and rollback]
     end;
 
     subgraph Approval Stage
         F --> G{Automated/Manual Approval};
         G --> |Approved| H[Resource Provision];
         G --> |Rejected| I3[Cancel approval ];
-        I3--> N
+        I3--> N[Cancel and rollback]
     end;
 
     subgraph Resource Provision Stage
         H --> J{Provisioning in Progress};
         J --> |Success| K[Successful Provision];
-        J --> |Failed| N
+        J --> |Failed| N[Cancel and rollback]
     end;
 
 
