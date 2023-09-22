@@ -6,6 +6,57 @@ This repo can be use to provision cloud service by a json template
 
 > It is possible to implement saga pattern / parallel in this solution.
 
+### The reason of choosing the full-stack web application on AWS serverless architecture because serverless computing offers several benefits:
+
+- Lambda scales automatically based on incoming requests or events.
+- Event sources trigger Lambda functions automatically.
+- No manual load balancer configuration is needed for Lambda.
+- Amazon API Gateway provides load balancing for serverless APIs.
+
+1. Cost Efficiency:
+   - With serverless computing, I only pay for the actual compute resources I use, saving me costs compared to traditional server-based architectures.
+   - AWS Lambda, the serverless compute service, offers a generous free tier and scales automatically based on my application's demand, minimizing any over-provisioning costs.
+
+2. Scalability:
+   - My serverless applications effortlessly handle varying workloads. AWS Lambda scales automatically in response to incoming traffic, ensuring my application remains responsive even under high loads.
+   - I can easily accommodate traffic spikes without the need for manual intervention.
+
+3. Simplified Operations and less overhead:
+   - Serverless eliminates the need for server provisioning, patching, and maintenance, reducing operational overhead.
+   - AWS takes care of managing the underlying infrastructure, including server provisioning, patching, and monitoring, allowing me to focus solely on my application code.
+
+4. Agility and Speed:
+   - Serverless enables me to develop and deploy rapidly. I can iterate quickly, deploying updates without any downtime.
+   - Breaking down my application into smaller, more manageable functions makes it easier for me to develop and maintain.
+
+5. High Availability:
+   - AWS Lambda functions are distributed across multiple availability zones, ensuring high availability by default.
+   - AWS services like Amazon API Gateway, Amazon S3, and AWS DynamoDB are regionally distributed for redundancy and fault tolerance.
+
+6. Security:
+   - AWS offers a robust security model. I can configure Lambda functions to run within a VPC (Virtual Private Cloud) for network isolation.
+   - AWS Identity and Access Management (IAM) provides me with fine-grained control over who can invoke functions and access other AWS resources.
+
+7. Reduced Infrastructure Complexity:
+   - With serverless, I no longer need to manage databases or server instances. Services like Amazon Aurora Serverless and Amazon RDS Proxy handle database scaling.
+   - AWS services like Amazon S3, DynamoDB, and AWS Cognito can be seamlessly integrated into my serverless application.
+
+8. Auto Scaling and auto load balance:
+   - Serverless services automatically scale based on demand, ensuring optimal performance and resource utilization.
+   - I don't have to worry about configuring or managing auto-scaling groups manually.
+
+9. Global Reach:
+   - AWS has data centers in multiple regions worldwide, allowing me to deploy my serverless application globally for low-latency access by users around the world.
+
+10. Serverless Ecosystem:
+    - AWS provides a wide range of serverless services, including AWS Lambda, Amazon API Gateway, AWS Step Functions, AWS App Runner, and more, all of which I can seamlessly integrate into my application architecture.
+
+11. Cost Monitoring and Optimization:
+    - AWS offers detailed billing and cost management tools that help me monitor and optimize the costs of my serverless application.
+
+12. Integration with DevOps Practices:
+    - Serverless can be seamlessly integrated with DevOps practices like continuous integration and continuous deployment (CI/CD) pipelines, enabling automated testing and deployment in my development process.
+
 
 ### Prerequisite for running this project
 
@@ -14,7 +65,7 @@ This repo can be use to provision cloud service by a json template
 
 ### Architecture
 
-- This is Lambda orchestration. Orchestration will be handled by AWS Step Functions, and services handling requests will be handled by AWS Fargate running on Amazon ECS
+- This is Lambda orchestration. Orchestration will be handled by AWS Step Functions, and services handling requests will be handled by AWS Serverless Computing or AWS Fargate running on Amazon ECS
 
 
 ##### Source technology stack
@@ -29,10 +80,10 @@ This repo can be use to provision cloud service by a json template
 - AWS Secrets Manager
 - Amazon Event Bridge
 - AWS Identity and Access Management (IAM)
-> securely manage access to your AWS resources by controlling who is authenticated and authorized to use them
+> securely manage access to  AWS resources by controlling who is authenticated and authorized to use them
 
 - Amazon Systems Manager Automation Runbook (only if you wish to manage the ec2 instances directly)
->  manage your applications and infrastructure running in the AWS Cloud. It simplifies application and resource management, shortens the time to detect and resolve operational problems, and helps you manage your AWS resources securely at scale.
+>  manage  applications and infrastructure running in the AWS Cloud. It simplifies application and resource management, shortens the time to detect and resolve operational problems, and helps you manage  AWS resources securely at scale.
 
 - AWS CloudFormation 
 >  Set up AWS resources, provision them quickly and consistently, and manage them throughout their lifecycle across AWS accounts and Regions.
@@ -181,7 +232,7 @@ graph TD;
 9. [automation-runbook-reference](https://docs.aws.amazon.com/systems-manager-automation-runbooks/latest/userguide/automation-runbook-reference.html)
 10. [This pattern implements an automation document wrapper around AWS-RunShellScript execution for a AWS Step Functions waitForTaskToken integration.](https://github.com/aws-samples/amazon-stepfunctions-ssm-waitfortasktoken)
 11. [Run AWS Systems Manager automation tasks synchronously from AWS Step Functions](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/run-aws-systems-manager-automation-tasks-synchronously-from-aws-step-functions.html)
-12. [Use the power of script steps in your Systems Manager Automation runbooks](https://aws.amazon.com/blogs/mt/use-script-steps-in-your-systems-manager-automation-runbooks/)
+12. [Use the power of script steps in  Systems Manager Automation runbooks](https://aws.amazon.com/blogs/mt/use-script-steps-in--systems-manager-automation-runbooks/)
 13. [AWS CloudFormation stack updates](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html)
 14. [Custom Domain Names](https://aws.github.io/chalice/tutorials/customdomain.html)
 15. [Chalice supports multiple mechanisms for authorization.](https://aws.github.io/chalice/topics/authorizers.html)
