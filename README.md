@@ -1,6 +1,12 @@
 # exhilarating-auto-provision
 This repo can be use to provision cloud service by a json template
 
+### Goal of this project
+- Proivision the cloud resources  under authentication, authorization, accouting, assign approval when provision, managing the created resources in automtion, scalable and predictable.
+
+> It is possible to implement saga pattern / parallel in this solution.
+
+
 ### Prerequisite for running this project
 
 1. python3 3.11
@@ -219,3 +225,17 @@ arn:aws:states:::aws-sdk:cloudformation:createStack
 
 ```
 
+### Pending to be completed
+
+- Due to the time limit, only the core module of creation stack with standard step function flow is created.
+- The functions to be completed:
+    - The Authorization of users with AWS Cognito
+    - Attached VPC creation for step function and target web application
+    - The S3 bucket integration with trigger the step function for user to upload their template.
+    - Step function:
+        - The SNS service for sending email once provision completed
+        - The describing AWS cloud stack provision service function
+        - The SQS service for Approval Workflow
+        - Managing the cloud formation stack lifecycle
+    
+    
