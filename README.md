@@ -2,7 +2,7 @@
 This repo can be use to provision cloud service by a json template
 
 ### Goal of this project
-- Proivision the cloud resources  under authentication, authorization, accouting, assign approval when provision, managing the created resources in automtion, scalable and predictable.
+- Proivision the cloud resources  under authentication, authorization, accouting, assign approval when provision, managing the created resources in automation, scalable and predictable.
 
 > It is possible to implement saga pattern / parallel in this solution.
 
